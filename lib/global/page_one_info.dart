@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 const String appName = "Aura";
 const String appSize = "35 MB";
-const String appLogo = "assets/images/logo.png";
+const String appLogo = "assets/images/logo.jpg";
 const String appURL =
     "https://drive.google.com/uc?export=download&id=1MC-40oo6i0xJbhOoxywIm_A89vSTpPLU";
 const String? IOS_appURL = null; // This value can be left

@@ -293,7 +293,7 @@ class PageOne extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(5.0),
                       child: Image.asset(
-                        'assets/images/logo.jpg',
+                        'assets/images/firstApp/1.jpg',
                         fit: BoxFit.contain,
                       ),
                     ),

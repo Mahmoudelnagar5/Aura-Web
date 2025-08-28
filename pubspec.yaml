@@ -1,0 +1,29 @@
+name: aura_web
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.9.0
+
+dependencies:
+  carousel_slider: ^5.1.1
+  cupertino_icons: ^1.0.8
+  flutter:
+    sdk: flutter
+  font_awesome_flutter: ^10.10.0
+  google_fonts: ^6.3.1
+  url_launcher: ^6.3.2
+
+dev_dependencies:
+  flutter_lints: ^5.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/images/
+    - assets/images/firstApp/

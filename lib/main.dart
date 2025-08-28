@@ -2,6 +2,7 @@ import 'package:aura_web/screens/page_one.dart';
 import 'package:flutter/material.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 

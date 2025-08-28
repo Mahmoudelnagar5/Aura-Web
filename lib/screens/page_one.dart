@@ -256,45 +256,45 @@ class PageOne extends StatelessWidget {
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  CircleAvatar(
-                    radius: 35,
-                    backgroundColor: const Color(0xFF1976D2),
-                    child: CircleAvatar(
-                      radius: 32.5,
-                      backgroundColor: Colors.white,
+                  // CircleAvatar(
+                  //   radius: 35,
+                  //   backgroundColor: const Color(0xFF1976D2),
+                  //   child: CircleAvatar(
+                  //     radius: 32.5,
+                  //     backgroundColor: Colors.white,
 
-                      child: Image.asset(
-                        appLogo,
-                        fit: BoxFit.contain,
-                        // scale: 1.5,
-                        width: 50,
-                        height: 60,
-                      ),
-                    ),
-                  ),
-                  // Container(
-                  //   width: 70,
-                  //   height: 70,
-                  //   decoration: BoxDecoration(
-                  //     shape: BoxShape.circle,
-                  //     color: Colors.white,
-                  //     boxShadow: [
-                  //       BoxShadow(
-                  //         color: Colors.grey.withOpacity(0.2),
-                  //         blurRadius: 8,
-                  //         offset: const Offset(0, 2),
-                  //       ),
-                  //     ],
-                  //     border: Border.all(
-                  //       color: const Color(0xFF1976D2),
-                  //       width: 2,
+                  //     child: Image.asset(
+                  //       appLogo,
+                  //       fit: BoxFit.contain,
+                  //       // scale: 1.5,
+                  //       width: 50,
+                  //       height: 60,
                   //     ),
                   //   ),
-                  //   child: Padding(
-                  //     padding: const EdgeInsets.all(5.0),
-                  //     child: Image.asset(appLogo, fit: BoxFit.contain),
-                  //   ),
                   // ),
+                  Container(
+                    width: 70,
+                    height: 70,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.white,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.2),
+                          blurRadius: 8,
+                          offset: const Offset(0, 2),
+                        ),
+                      ],
+                      border: Border.all(
+                        color: const Color(0xFF1976D2),
+                        width: 2,
+                      ),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(5.0),
+                      child: Image.asset(appLogo, fit: BoxFit.contain),
+                    ),
+                  ),
                   const SizedBox(width: 15),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,

@@ -8,8 +8,6 @@ import 'package:url_launcher/url_launcher.dart';
 class PageOne extends StatelessWidget {
   const PageOne({super.key});
 
-  //=======================================================================================================functions
-
   void _showMessage(BuildContext context) {
     final randomMessage = (messages..shuffle()).first;
     ScaffoldMessenger.of(context).showSnackBar(

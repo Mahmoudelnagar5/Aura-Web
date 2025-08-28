@@ -597,7 +597,7 @@ class PageOne extends StatelessWidget {
                     _buildTeamMemberCard(
                       'Mahmoud Elnagar',
                       'Flutter Developer',
-                      'assets/images/Mahmoud.png',
+                      'assets/images/mahmoud.png',
 
                       'https://github.com/Mahmoudelnagar5',
                       'https://www.linkedin.com/in/mahmoud-elnagar-11040a259/',

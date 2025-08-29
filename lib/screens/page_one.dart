@@ -156,19 +156,91 @@ class PageOne extends StatelessWidget {
       ),
       child: Padding(
         padding: const EdgeInsets.all(20),
-        child: Row(
-          children: [
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            final isWide = constraints.maxWidth > 600;
+
+            if (isWide) {
+              // Horizontal layout for wide screens
+              return Row(
+                children: [
+                  CircleAvatar(
+                    radius: 35,
+                    backgroundImage: AssetImage(imageUrl),
+                  ),
+                  const SizedBox(width: 16),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          name,
+                          style: GoogleFonts.cairo(
+                            color: Colors.black,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          textAlign: TextAlign.left,
+                        ),
+                        const SizedBox(height: 4),
+                        Text(
+                          role,
+                          style: GoogleFonts.cairo(
+                            color: Colors.grey[600],
+                            fontSize: 16,
+                          ),
+                          textAlign: TextAlign.left,
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(width: 16),
+                  Column(
+                    children: [
+                      ElevatedButton.icon(
+                        style: ElevatedButton.styleFrom(
+                          minimumSize: const Size(120, 40),
+                          backgroundColor: const Color(0xFF333333),
+                          foregroundColor: Colors.white,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          padding: const EdgeInsets.all(8),
+                        ),
+                        onPressed: () => _launchGitHub(gitHubUrl),
+                        icon: const Icon(FontAwesomeIcons.github, size: 18),
+                        label: const Text("GitHub"),
+                      ),
+                      const SizedBox(height: 12),
+                      ElevatedButton.icon(
+                        style: ElevatedButton.styleFrom(
+                          minimumSize: const Size(120, 40),
+                          backgroundColor: const Color(0xFF0077B5),
+                          foregroundColor: Colors.white,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          padding: const EdgeInsets.all(8),
+                        ),
+                        onPressed: () => _launchLinkedIn(linkedInUrl),
+                        icon: const Icon(FontAwesomeIcons.linkedin, size: 18),
+                        label: const Text("LinkedIn"),
+                      ),
+                    ],
+                  ),
+                ],
+              );
+            } else {
+              // Vertical layout for narrow screens
+              return Column(
                 children: [
                   Row(
                     children: [
                       CircleAvatar(
-                        radius: 35,
+                        radius: 28,
                         backgroundImage: AssetImage(imageUrl),
                       ),
-                      const SizedBox(width: 16),
+                      const SizedBox(width: 14),
                       Expanded(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -177,17 +249,17 @@ class PageOne extends StatelessWidget {
                               name,
                               style: GoogleFonts.cairo(
                                 color: Colors.black,
-                                fontSize: 20,
+                                fontSize: 18,
                                 fontWeight: FontWeight.bold,
                               ),
                               textAlign: TextAlign.left,
                             ),
-                            const SizedBox(height: 4),
+                            const SizedBox(height: 2),
                             Text(
                               role,
                               style: GoogleFonts.cairo(
                                 color: Colors.grey[600],
-                                fontSize: 16,
+                                fontSize: 14,
                               ),
                               textAlign: TextAlign.left,
                             ),
@@ -197,45 +269,53 @@ class PageOne extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 16),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: ElevatedButton.icon(
+                          style: ElevatedButton.styleFrom(
+                            minimumSize: const Size(0, 40),
+                            backgroundColor: const Color(0xFF333333),
+                            foregroundColor: Colors.white,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            padding: const EdgeInsets.symmetric(
+                              vertical: 8,
+                              horizontal: 12,
+                            ),
+                          ),
+                          onPressed: () => _launchGitHub(gitHubUrl),
+                          icon: const Icon(FontAwesomeIcons.github, size: 16),
+                          label: const Text("GitHub"),
+                        ),
+                      ),
+                      const SizedBox(width: 12),
+                      Expanded(
+                        child: ElevatedButton.icon(
+                          style: ElevatedButton.styleFrom(
+                            minimumSize: const Size(0, 40),
+                            backgroundColor: const Color(0xFF0077B5),
+                            foregroundColor: Colors.white,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            padding: const EdgeInsets.symmetric(
+                              vertical: 8,
+                              horizontal: 12,
+                            ),
+                          ),
+                          onPressed: () => _launchLinkedIn(linkedInUrl),
+                          icon: const Icon(FontAwesomeIcons.linkedin, size: 16),
+                          label: const Text("LinkedIn"),
+                        ),
+                      ),
+                    ],
+                  ),
                 ],
-              ),
-            ),
-            const SizedBox(width: 16),
-            Column(
-              children: [
-                ElevatedButton.icon(
-                  style: ElevatedButton.styleFrom(
-                    minimumSize: const Size(120, 40),
-                    backgroundColor: const Color(0xFF333333),
-                    foregroundColor: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    padding: const EdgeInsets.all(8),
-                  ),
-                  onPressed: () => _launchGitHub(gitHubUrl),
-                  icon: const Icon(FontAwesomeIcons.github, size: 18),
-                  label: const Text("GitHub"),
-                ),
-                const SizedBox(height: 12),
-                ElevatedButton.icon(
-                  style: ElevatedButton.styleFrom(
-                    minimumSize: const Size(120, 40),
-
-                    backgroundColor: const Color(0xFF0077B5),
-                    foregroundColor: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    padding: const EdgeInsets.all(8),
-                  ),
-                  onPressed: () => _launchLinkedIn(linkedInUrl),
-                  icon: const Icon(FontAwesomeIcons.linkedin, size: 18),
-                  label: const Text("LinkedIn"),
-                ),
-              ],
-            ),
-          ],
+              );
+            }
+          },
         ),
       ),
     );

@@ -30,9 +30,17 @@ migrate_working_dir/
 .flutter-plugins-dependencies
 .pub-cache/
 .pub/
-!/build/web
-/build/
+# Build artifacts (except web builds)
+**/build/android/
+/**/build/ios/
+/**/build/macos/
+/**/build/linux/
+/**/build/windows/
+/**/build/ephemeral/
 /coverage/
+
+# Allow web build artifacts to be tracked
+!/build/web
 
 # Symbolication related
 app.*.symbols
